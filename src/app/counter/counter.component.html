@@ -1,0 +1,11 @@
+<!-- vm$ is subscribed by async pipe and exposes a variable named vm -->
+<h1>Counter Viewmodel</h1>
+<div *ngIf="vm$ | async as vm">
+  <h1>
+    Current counter :
+    <pre>{{ vm | json }}</pre>
+  </h1>
+
+  <button type="button" (click)="decr$.next(1)">Decrement</button>
+  <button type="button" (click)="incr$.next(1)">Increment</button>
+</div>
